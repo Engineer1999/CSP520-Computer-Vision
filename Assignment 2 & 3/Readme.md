@@ -27,7 +27,7 @@ Image 1 </br>
 ![Accuracy of Classifiers](https://github.com/yashpatel301/Computer-Vision-Basics/blob/main/Face%20Recognition/Results/Accuracy_SVM_vs_KNN.png)
 
 ## **Installation guidelines and platform details:**
-</br> This assigment is performed on Google colab only. All the libraries are mentioned at the beginning of the code and are imported without any installation needed and all the required libraries are mentioned in the requirements.txt
+</br> This assigment is performed on Google colab only. All the libraries are mentioned at the beginning of the code and are imported without any installation needed in colab and for anaconda environment all the required libraries are mentioned in the requirements.txt
 
 ## **References:**
 1. https://stackoverflow.com/questions/11256433/how-to-show-math-equations-in-general-githubs-markdownnot-githubs-blog
