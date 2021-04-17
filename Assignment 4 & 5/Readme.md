@@ -13,6 +13,28 @@ When we talk about accuracy plots between training and validation accuracy, ther
 
 ## **Results:**
 Results of experimenting with Sigmoid and Softmax activation function. 
+</br> Sigmoid function </br>
+![Sigmoid function](https://github.com/yashpatel301/Computer-Vision-Basics/blob/main/Citrus-leaves-Classification/Results/LOSS_SIGMOID.png)
+
+</br> Softmax function </br>
+![Softmax function](https://github.com/yashpatel301/Computer-Vision-Basics/blob/main/Citrus-leaves-Classification/Results/LOSS_SOFTMAX.png)
+
+</br>Results of experimenting with different learning rates.
+</br> Accuracy </br>
+![Accuracy](https://github.com/yashpatel301/Computer-Vision-Basics/blob/main/Citrus-leaves-Classification/Results/LR_accuracy.png)
+
+</br> Validation Accuracy </br>
+![Validation Accuracy](https://github.com/yashpatel301/Computer-Vision-Basics/blob/main/Citrus-leaves-Classification/Results/LR_val_acc.png)
+
+</br>Results of experimenting with Dropout percentage.
+</br> Dropout 30% </br>
+![Accuracy](https://github.com/yashpatel301/Computer-Vision-Basics/blob/main/Citrus-leaves-Classification/Results/Dropout_30.png)
+
+</br> Dropout 50% </br>
+![Validation Accuracy](https://github.com/yashpatel301/Computer-Vision-Basics/blob/main/Citrus-leaves-Classification/Results/Dropout_50.png)
+
+## **Installation guidelines and platform details:**
+
 
 ## **References:** 
 1. https://keras.io/api/preprocessing/image/
