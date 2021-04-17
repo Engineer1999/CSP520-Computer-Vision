@@ -10,7 +10,24 @@ and orientation can be found using <img src="https://latex.codecogs.com/svg.late
 </br> After getting the magnitude and orientation will be add to the histogram with scale = 20 and we will get 9 elements from one feature vector of one 8x8 image region which will be return in bin variable if we use HoG inbuilt function [2]. With the help of these feature vectors we will train our classifier and test on the testing data. After testing the model we will compare the values of predicted and ground truth to get the accuracy of our model. 
 </br>
 ## **Results:**
+HoG implementation on two faces: </br>
+Image 1 </br>
+![Image 1](https://github.com/yashpatel301/Computer-Vision-Basics/blob/main/Face%20Recognition/Results/HOG_image11.png)
 
+</br>HoG image 1 </br>
+![HoG image 1](https://github.com/yashpatel301/Computer-Vision-Basics/blob/main/Face%20Recognition/Results/HOG_image_12.png)
+
+</br> Image 2 </br>
+![Image 2](https://github.com/yashpatel301/Computer-Vision-Basics/blob/main/Face%20Recognition/Results/HOG_image_21.png)
+
+</br>HoG image 2 </br>
+![HoG image 2](https://github.com/yashpatel301/Computer-Vision-Basics/blob/main/Face%20Recognition/Results/HOG_image_22.png)
+
+</br> Results of classfiers used with different input image size (Comparing with respect to Accuracy of model and Time taken to train)
+![Accuracy of Classifiers](https://github.com/yashpatel301/Computer-Vision-Basics/blob/main/Face%20Recognition/Results/Accuracy_SVM_vs_KNN.png)
+
+## **Installation guidelines and platform details:**
+</br> This assigment is performed on Google colab only. All the libraries are mentioned at the beginning of the code and are imported with any installment. All the libraries can be used by only importing in colab. For Anaconda environment requirement.txt can be used which is available in this folder only. 
 
 ## **References:**
 1. https://stackoverflow.com/questions/11256433/how-to-show-math-equations-in-general-githubs-markdownnot-githubs-blog
