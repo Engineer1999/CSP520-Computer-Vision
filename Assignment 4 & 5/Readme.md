@@ -34,7 +34,7 @@ Results of experimenting with Sigmoid and Softmax activation function.
 ![Validation Accuracy](https://github.com/yashpatel301/Computer-Vision-Basics/blob/main/Citrus-leaves-Classification/Results/Dropout_50.png)
 
 ## **Installation guidelines and platform details:**
-
+This assigment is performed on Google colab only. All the libraries are mentioned at the beginning of the code and are imported without any installation needed and all the required libraries are mentioned in the requirements.txt. 
 
 ## **References:** 
 1. https://keras.io/api/preprocessing/image/
