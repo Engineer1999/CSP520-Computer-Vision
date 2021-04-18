@@ -46,10 +46,28 @@ After extracting the necessary features, we then used the SVM Classification mod
 
 ## Architectural Flow
 
-
+![alt text](https://github.com/jimil749/CSP520-Computer-Vision/blob/jimil/assignment-2/Assignment%202%20%26%203/Samaritans_2/images/cv-assignment1.jpg)
 
 ## Results
 
-## Installation Guides
+### HoG Feature Extraction
+
+![alt text](https://github.com/jimil749/CSP520-Computer-Vision/blob/jimil/assignment-2/Assignment%202%20%26%203/Samaritans_2/images/hog.png)
+
+### Final Results
+
+![alt text](https://github.com/jimil749/CSP520-Computer-Vision/blob/jimil/assignment-2/Assignment%202%20%26%203/Samaritans_2/images/result.png)
+
+## Installation Guides and Platform details
+
+Platform used: 
+- [Google Colab](https://colab.research.google.com/)
+
+The entire process was performed on Google Colab. If you want to setup a working environment locally, all the dependecies are mentioned in `requirements.txt` file. Run `pip install -r requirements.txt` to install the dependencies and run jupyter notebook to use the script.
 
 ## References
+
+1. https://learnopencv.com/histogram-of-oriented-gradients
+2. https://towardsdatascience.com/building-a-facial-recognition-model-using-pca-svm-algorithms-c81d870add16
+3. https://hal.inria.fr/inria-00548512/document
+4. https://www.eeweb.com/real-time-face-detection-and-recognition-with-svm-and-hog-features/
