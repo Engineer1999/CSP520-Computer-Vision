@@ -3,11 +3,23 @@
 ## Introduction
 In this computer vision era, the potential to recognize human faces is evidence of spectacular human intelligence. Face recognition is known as one of the most significant and auspicious applications of image analysis. Especially during the previous years, face recogonition has gained remarkable attention.Psychologists concluded that holistic and feature-based approaches are two different routes of face recognition. For building this application we used SIFT ( scale-invariant feature transform ) feture extraction algorithm. The whole process of face recognition is divided into following major section:
 
-1. Datast Creation
+1. Datast Creation (gathering)
 2. Feature Extraction using SIFT Algorithm
 3. Classification using SVM (Support Vector Machine)
 
 ## Approach
+
+As we mentioned in the Introduction, while creating a this project we mainly focused on 3 parts:
+
+### Dataset Creation
+
+With the aim of obtain robust face recognition model, we created our own image database using our webcame. we collected 5 persons images. each person have 30 images so we have total 150  images of person's faces.Each faces has been labeled with the name of the person.
+
+### Feature Extraction using SIFT Algorithm
+
+After gathering the dataset, we are moving forward to second important stage of face detection - Feature Extraction. Dataset conatins high dimensional images. so it is very difficult to process this data. so we extract features using SIFT algorithm
+
+
 
 
 
@@ -32,3 +44,10 @@ Platform used:
 2. https://www.researchgate.net/publication/224114966_Face_recognition_using_SIFT_features
 3. https://machinelearningmastery.com/one-vs-rest-and-one-vs-one-for-multi-class-classification
 4. https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html
+
+
+
+
+## Contributors
+---
+| [Bhumiti Gohel](https://github.com/bhumiti28) | [Supan Shah](https://github.com/Supan14) |
