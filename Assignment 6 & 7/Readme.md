@@ -3,7 +3,18 @@ In this assignment, we have performed neural style transfer which takes in a con
 
 # Approach
 The VGG16 and VGG19 pretrained models are loaded and their intermediate layers are used to generate the output from them. First convolution layer of block5 is taken as the content layer, and the first convolution layers of the five blocks are taken as the style layers. Here, the layers are not needed to be trained. The content and the style images are preprocessed and the content and style feature representations are extracted. Adam optimizer is used with a learning rate of 5, content weight is α = 10<sup>3</sup>, and
-style weight β = 10<sup>−2</sup>. The image is then mean normalised. The content loss is the Mean Squared Loss and the style loss is computed using Gram Matrix. Style score and content score are computed based on the style loss and content loss respectively. Both the scores are multiplied with their respective weights and total loss is computed by adding them. Gradients are computed with respect to the input image. The image with the minimum total loss, obtained while iterating through, is considered as the final output of the style transfer.
+style weight β = 10<sup>−2</sup>. The image is then mean normalised. The content loss is the Mean Squared Loss and the style loss is computed using Gram Matrix. 
+![L_content.PNG](https://github.com/yeshaajudia/CSP520-Computer-Vision/blob/main/Assignment%206%20%26%207/images/L_content.PNG)
+
+[1]
+
+![L_style.PNG](https://github.com/yeshaajudia/CSP520-Computer-Vision/blob/main/Assignment%206%20%26%207/images/L_style.PNG)
+
+Style score and content score are computed based on the style loss and content loss respectively. Both the scores are multiplied with their respective weights and total loss is computed by adding them. 
+
+![L_total.PNG](https://github.com/yeshaajudia/CSP520-Computer-Vision/blob/main/Assignment%206%20%26%207/images/L_total.PNG)
+
+Gradients are computed with respect to the input image. The image with the minimum total loss, obtained while iterating through, is considered as the final output of the style transfer.
 
 # Results
 The content loss and style loss are minimized. Decreasing the dimension of the image, makes the style image, content image and the final output image blur. Also, it is observed that a higher dimension image takes much time to generate the result, whereas an image with lower dimension generates the result within less time. We have used different style images to generate the result, for both, VGG16 and VGG19.
