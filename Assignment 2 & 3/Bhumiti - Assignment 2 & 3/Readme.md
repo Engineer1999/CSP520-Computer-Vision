@@ -13,7 +13,16 @@ In this computer vision era, the potential to recognize human faces is evidence 
 
 
 ## Installation guidelines and platform details
+Whole Face detection was performed on Google Colab. If you want to setup  working environment locally, download the "Face_Recognition_Challenge.ipynb" and upload to this file into the jupyter notebook and run jupyter notebook to use this script. In this project we created our own dataset. If you want to use our face database then Mount your drive (In google Colab). Ask supan.s2@ahduni.edu.in OR bhumiti.g@ahduni.edu.in for access to our face database. or If you want to create your own database then Choose your face data directory path (to load a blank directory and create your own database). Our directory will be loaded at '/gdrive/MyDrive/BitCoders/Assignment2/'.
+
+
+
 Platform used:
 [Google Colab](https://colab.research.google.com/)
 
 ## References
+
+1. https://en.wikipedia.org/wiki/Scale-invariantfeaturetransform
+2. https://www.researchgate.net/publication/224114966_Face_recognition_using_SIFT_features
+3. https://machinelearningmastery.com/one-vs-rest-and-one-vs-one-for-multi-class-classification
+4. https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html
