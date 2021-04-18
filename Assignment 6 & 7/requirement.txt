@@ -3,4 +3,4 @@ numpy==1.19.5
 Image==7.1.2
 tensorflow==1.15.2
 IPython==5.5.0
-python_version3.7.10
+python_version==3.7.10
