@@ -24,7 +24,7 @@ After gathering the dataset, we are moving forward to second important stage of 
  
  ###  Classification using SVM (Support Vector Machine)
  
-After completing a second stage (feature extraction), For classification we used Multiclass SVM. We trained every images from the dataset and for testing , we captured images by live streaming. after that for classification  we used sklearn's multiclass classifier - OneVsOneClassifier and  RestClassifier . At last we are plotting confusion matrix and accuracy curve , ROC CUrve
+After completing a second stage (feature extraction), For classification we used Multiclass SVM. We trained every images from the dataset and for testing , we captured images by live streaming. after that for classification  we used sklearn's multiclass classifier - OneVsOneClassifier and  RestClassifier . At last we are plotting confusion matrix and accuracy curve , ROC Curve.
 
 
 ## Results
