@@ -35,17 +35,26 @@ correlation of activations in all the layers are similar between the style image
 #### Content Loss Function
 
 The content loss function makes sure that the content present in the content image is captured in the generated image. Since, CNNs capture information about the content in the higher layers, we used the top-most CNN layer to define the content loss function.
-[!alt text]()
+
+Let <img src="https://render.githubusercontent.com/render/math?math=A_{ij}^l(I)"> be the activation of the <img src="https://render.githubusercontent.com/render/math?math=l^{th}"> layer, <img src="https://render.githubusercontent.com/render/math?math=i^{th}"> feature map and <img src="https://render.githubusercontent.com/render/math?math=j^{th}"> position obtained using the image I. Then the content loss is defined as,
+
+![alt text](https://github.com/jimil749/CSP520-Computer-Vision/blob/jimil/assignment-6/Assignment%206%20%26%207/Samaritans_6/images/math.svg)
 
 #### Style Loss Function
 
 Style loss function is trickier than the content loss function. To extract the style information from the VGG network, we use all the layers of the CNN. Furthermore, style information is measured as the amount of correlation present between features maps in a given layer. Next, a loss is defined as the difference of correlation present between the feature maps computed by the generated image and the style image. Mathematically, the style loss is defined as,
-IMAGE
+
+![alt text](https://github.com/jimil749/CSP520-Computer-Vision/blob/jimil/assignment-6/Assignment%206%20%26%207/Samaritans_6/images/math-1.svg), where
+
+![alt text](https://github.com/jimil749/CSP520-Computer-Vision/blob/jimil/assignment-6/Assignment%206%20%26%207/Samaritans_6/images/math-2.svg), where
+
+![alt text](https://github.com/jimil749/CSP520-Computer-Vision/blob/jimil/assignment-6/Assignment%206%20%26%207/Samaritans_6/images/math-3.svg)
 
 #### Final Loss
 
 The final loss is defined as,
-IMAGE
+
+![alt text](https://github.com/jimil749/CSP520-Computer-Vision/blob/jimil/assignment-6/Assignment%206%20%26%207/Samaritans_6/images/math-4.svg)
 
 where alpha and beta are hyperparameters.
 
@@ -53,7 +62,47 @@ where alpha and beta are hyperparameters.
 
 We have used the Adam Optimizer in order to minimize our loss. We iteratively update our output image such that it minimizes our loss: we don’t update the weights associated with our network, but instead we train our input image to minimize loss. 
 
+### Architectural Overview
+
+![alt_text](https://github.com/jimil749/CSP520-Computer-Vision/blob/jimil/assignment-6/Assignment%206%20%26%207/Samaritans_6/images/nst_architecture.jpg)
+
 ## Results
+
+We took 3 pairs of content and style images of size 512x512 for both VGG16 and VGG 19, here are the transformations:
+
+### VGG 16
+
+#### Transformation
+![alt_text](https://github.com/jimil749/CSP520-Computer-Vision/blob/jimil/assignment-6/Assignment%206%20%26%207/Samaritans_6/images/vgg16_grid1.png)
+
+![alt_text](https://github.com/jimil749/CSP520-Computer-Vision/blob/jimil/assignment-6/Assignment%206%20%26%207/Samaritans_6/images/vgg16_grid2.png)
+
+![alt_text](https://github.com/jimil749/CSP520-Computer-Vision/blob/jimil/assignment-6/Assignment%206%20%26%207/Samaritans_6/images/vgg16_grid3.png)
+
+#### Final Output
+![alt_text](https://github.com/jimil749/CSP520-Computer-Vision/blob/jimil/assignment-6/Assignment%206%20%26%207/Samaritans_6/images/vgg16_1.png)
+
+![alt_text](https://github.com/jimil749/CSP520-Computer-Vision/blob/jimil/assignment-6/Assignment%206%20%26%207/Samaritans_6/images/vgg16_2.png)
+
+![alt_text](https://github.com/jimil749/CSP520-Computer-Vision/blob/jimil/assignment-6/Assignment%206%20%26%207/Samaritans_6/images/vgg16_3.png)
+
+### VGG19
+
+#### Transformation
+![alt_text](https://github.com/jimil749/CSP520-Computer-Vision/blob/jimil/assignment-6/Assignment%206%20%26%207/Samaritans_6/images/vgg19_grid1.png)
+
+![alt_text](https://github.com/jimil749/CSP520-Computer-Vision/blob/jimil/assignment-6/Assignment%206%20%26%207/Samaritans_6/images/vgg19_grid2.png)
+
+![alt_text](https://github.com/jimil749/CSP520-Computer-Vision/blob/jimil/assignment-6/Assignment%206%20%26%207/Samaritans_6/images/vgg19_grid3.png)
+
+#### Final Output
+![alt_text](https://github.com/jimil749/CSP520-Computer-Vision/blob/jimil/assignment-6/Assignment%206%20%26%207/Samaritans_6/images/vgg19_1.png)
+
+![alt_text](https://github.com/jimil749/CSP520-Computer-Vision/blob/jimil/assignment-6/Assignment%206%20%26%207/Samaritans_6/images/vgg19_2.png)
+
+![alt_text](https://github.com/jimil749/CSP520-Computer-Vision/blob/jimil/assignment-6/Assignment%206%20%26%207/Samaritans_6/images/vgg19_3.png)
+
+
 
 ## Platform 
 
