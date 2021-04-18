@@ -6,16 +6,24 @@ The VGG16 and VGG19 pretrained models are loaded and their intermediate layers a
 style weight β = 10<sup>−2</sup>. The image is then mean normalised. The content loss is the Mean Squared Loss and the style loss is computed using Gram Matrix. Style score and content score are computed based on the style loss and content loss respectively. Both the scores are multiplied with their respective weights and total loss is computed by adding them. Gradients are computed with respect to the input image. The image with the minimum total loss, obtained while iterating through, is considered as the final output of the style transfer.
 
 # Results
-The content loss and style loss are minimized. Decreasing the dimension of the image, makes the style image, content image and the final output image blur. Also, it is observed that a higher dimension image takes much time to generate the result, whereas an image with lower dimension generates the result within less time. We have used different style images to generate the result, for both, VGG16 nad VGG19.
+The content loss and style loss are minimized. Decreasing the dimension of the image, makes the style image, content image and the final output image blur. Also, it is observed that a higher dimension image takes much time to generate the result, whereas an image with lower dimension generates the result within less time. We have used different style images to generate the result, for both, VGG16 and VGG19.
+
 Neural style transfer using VGG19:
-<images>
+![VGG19_1.PNG](https://github.com/yeshaajudia/CSP520-Computer-Vision/blob/main/Assignment%206%20%26%207/images/VGG19_1.PNG)
+![VGG19_2.PNG](https://github.com/yeshaajudia/CSP520-Computer-Vision/blob/main/Assignment%206%20%26%207/images/VGG19_2.PNG)
+![VGG19_3.PNG](https://github.com/yeshaajudia/CSP520-Computer-Vision/blob/main/Assignment%206%20%26%207/images/VGG19_3.PNG)
+![VGG19_4.PNG](https://github.com/yeshaajudia/CSP520-Computer-Vision/blob/main/Assignment%206%20%26%207/images/VGG19_4.PNG)
+
 Neural style transfer using VGG16:
-<images>
+![VGG16_1.PNG](https://github.com/yeshaajudia/CSP520-Computer-Vision/blob/main/Assignment%206%20%26%207/images/VGG16_1.PNG)
+![VGG16_2.PNG](https://github.com/yeshaajudia/CSP520-Computer-Vision/blob/main/Assignment%206%20%26%207/images/VGG16_2.PNG)
+![VGG16_3.PNG](https://github.com/yeshaajudia/CSP520-Computer-Vision/blob/main/Assignment%206%20%26%207/images/VGG16_3.PNG)
+![VGG16_4.PNG](https://github.com/yeshaajudia/CSP520-Computer-Vision/blob/main/Assignment%206%20%26%207/images/VGG16_4.PNG)
 
 # Installation guidelines and platform details
 This experiment was carried out on google colab, using GPU runtime. Python libraries such as matplotlib, numpy, tensorflow, etc are used. 
 
-# References with necessary hyperlinks.
+# References
 [1] Gatys, Leon A., Alexander S. Ecker, and Matthias Bethge. ”A neural algorithm of artistic style.” arXiv preprint arXiv:1508.06576 (2015).
 
 [2] Huang, Xun, and Serge Belongie. ”Arbitrary style transfer in realtime with adaptive instance normalization.” Proceedings of the IEEE International Conference on Computer Vision. 2017.
