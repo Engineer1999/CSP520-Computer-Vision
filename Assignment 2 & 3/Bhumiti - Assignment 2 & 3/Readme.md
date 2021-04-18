@@ -1,9 +1,15 @@
 # Face Recognition Challenge
 
 ## Introduction
-In this computer vision era, the potential to recognize human faces is evidence of spectacular human intelligence. Face recognition is known as one of the most significant and auspicious applications of image analysis. Especially during the previous years, face recogonition has gained remarkable attention.Psychologists concluded that holistic and feature-based approaches are two different routes of face recognition.
+In this computer vision era, the potential to recognize human faces is evidence of spectacular human intelligence. Face recognition is known as one of the most significant and auspicious applications of image analysis. Especially during the previous years, face recogonition has gained remarkable attention.Psychologists concluded that holistic and feature-based approaches are two different routes of face recognition. For building this application we used SIFT ( scale-invariant feature transform ) feture extraction algorithm. The whole process of face recognition is divided into following major section:
+
+1. Datast Creation
+2. Feature Extraction using SIFT Algorithm
+3. Classification using SVM (Support Vector Machine)
 
 ## Approach
+
+
 
 ## Results
 ![Output1 (1)](https://user-images.githubusercontent.com/60286760/115150811-a8536980-a087-11eb-8db1-54aead06adfb.png)
