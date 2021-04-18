@@ -1,0 +1,54 @@
+# Homework Assignment 6-7: Neural Style transfer
+
+## Introduction 
+Creating art is one of the mastered skills of us humans, and Computers have mastered skill of making complex calculations easily. So, we can say that art is the differentiate between human and computers. Neural style transfer is a sweet combo of Human’s art skills and computer’s capability of doing complex calculations. This combo makes the art which can’t be created by either of them alone, It is a way to compose image called content image in the style of another image and blend them together to create a combination.
+
+
+## Approach
+
+We are going to use **VGG16 and VGGL19**, which are convolutional neural networks. So, when we use CNN they develop a representation of the image that makes **object information** increasingly explicit along the processing hierarchy.
+
+- Content Feature Extraction
+
+So **lower-level** layers used to identify **basic information** of the image, and **higher level** layers are used to identify the **high-level content** in terms of objects and their arrangement in the input image, which is a useful information for content representation so we will use **higher-level for content feature**.
+
+- Style Feature Extraction
+
+For style feature we need to get **texture information**. So for that **lower-level works well**, and that **feature space** is built on top of the network that consists of the **”Correlation”** between the different filter responses over the spatial extent of the feature maps.
+
+- Loss Funtion 
+	- for content Loss
+		- **Squared-error loss** between two feature is used
+	- For style loss
+		- Obtain from **gram matrix**.
+	- Total loss
+		- it is **weighted sum** of content loss and style loss with the weighting factors.
+- Architectural overview
+	- We used **VGG16 and VGG19** architecture here, where VGG16 is convolutional neural network with **13 convolution** layers and **5 max pooling layers**, and VGG19 is convolutional neural network with **16 convolution layers** and **5 max pooling layers**.
+
+## Installation-guidelines
+
+- first clone the repo using
+git clone https://github.com/Mithilesh1609/CSP520-Computer-Vision.git
+
+- Then install required liberers using
+pip install -r requirenments.txt
+
+## Results 
+
+Here are some comparision of the image from VGG16 and VGG19.
+
+-[](https://github.com/Mithilesh1609/CSP520-Computer-Vision/Assignment 6 & 7/output/elon_vgg16.png)
+-[](https://github.com/Mithilesh1609/CSP520-Computer-Vision/Assignment 6 & 7/output/vgg19_syle_elon.png)
+-[](https://github.com/Mithilesh1609/CSP520-Computer-Vision/Assignment 6 & 7/output/vgg16_monalisa.png)
+-[](https://github.com/Mithilesh1609/CSP520-Computer-Vision/Assignment 6 & 7/output/vgg19_monalisa.png)
+-[](https://github.com/Mithilesh1609/CSP520-Computer-Vision/Assignment 6 & 7/output/vgg16_picaso.png)
+-[](https://github.com/Mithilesh1609/CSP520-Computer-Vision/Assignment 6 & 7/output/vgg19_picaso.png)
+
+
+## References
+
+<a id="1">[1]</a> [A Neural Algorithm of Artistic Style}{A Neural Algorithm of Artistic Style](https://arxiv.org/pdf/1508.06576.pdf)<br/>
+<a id="2">[2]</a> [Neural Artistic Style Transfer: A Comprehensive Look](https://medium.com/artists-and-machine-intelligence/neural-artistic-style-transfer-a-comprehensive-look-f54d8649c199)<br/>
+<a id="3">[3]</a> [J. L. Y. Li, N. Wang and X. Hou, Demystifying Neural Style Transfer.](https://medium.com/tensorflow/neural-style-transfer-creating-art-with-deep-learning-using-tf-keras-and-eager-execution-7d541ac31398)<br/>
+<a id="4">[4]</a> [Neural-Style-Transfer](https://github.com/AyushExel/Neural-Style-Transfer)
