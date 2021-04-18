@@ -1,0 +1,3 @@
+pip install torchvision
+pip install torch
+pip install matplotlib
