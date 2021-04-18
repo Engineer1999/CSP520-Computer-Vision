@@ -7,6 +7,9 @@ style weight β = 10<sup>−2</sup>. The image is then mean normalised. The cont
 
 # Results
 The content loss and style loss are minimized. Decreasing the dimension of the image, makes the style image, content image and the final output image blur. Also, it is observed that a higher dimension image takes much time to generate the result, whereas an image with lower dimension generates the result within less time. We have used different style images to generate the result, for both, VGG16 nad VGG19.
+Neural style transfer using VGG19:
+<images>
+Neural style transfer using VGG16:
 <images>
 
 # Installation guidelines and platform details
