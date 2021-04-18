@@ -55,7 +55,14 @@ So, Here we can easily visualize that what is the true positive rate and false p
 
 
 ## Installation guidelines and platform details
-Whole Face detection was performed on Google Colab. If you want to setup  working environment locally, download the "Face_Recognition_Challenge.ipynb" and upload to this file into the jupyter notebook and run jupyter notebook to use this script. In this project we created our own dataset. If you want to use our face database then Mount your drive (In google Colab). Ask supan.s2@ahduni.edu.in OR bhumiti.g@ahduni.edu.in for access to our face database. or If you want to create your own database then Choose your face data directory path (to load a blank directory and create your own database). Our directory will be loaded at '/gdrive/MyDrive/BitCoders/Assignment2/'.
+Whole Face detection was performed on Google Colab. 
+If you want to setup working environment locally, 
+
+- To clone this repository : https://github.com/bhumiti28/CSP520-Computer-Vision.git
+- To install the requirements : pip install -r requirements.txt
+- To use our dataset : Ask supan.s2@ahduni.edu.in OR bhumiti.g@ahduni.edu.in for access to our face database.
+
+If you want to create your own database then Choose your face data directory path (to load a blank directory and create your own database). Our directory will be loaded at '/gdrive/MyDrive/BitCoders/Assignment2/'.
 
 
 Platform used:
