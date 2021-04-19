@@ -17,6 +17,7 @@ In this assignment, our objective is Classification of Citrus Leaves Data using 
       - [II. Hyperparameters](#ii-hyperparameters)
 - [Results](#results)
   - [Performance Metrics](#performance-metrics)
+  - - [Learning Curves](#learning-curves)
 - [Discussion Over Results](#discussion-of-results)
 - [Key-Takeaways](#key-takeaways)
 - [Installation Guide](#installation-guide)
