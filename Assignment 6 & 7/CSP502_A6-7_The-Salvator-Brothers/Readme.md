@@ -6,9 +6,12 @@ This work presents a neural algorithm of artistic style, known as Style Transfer
 
 - [Introduction](#introduction)
 - [Approach](#approach)
-  - [Model Description](#models)
-  - [Representations](#representations)
-  - [Loss Functions](#loss-functions)
+  - [Models Used](#models)
+    - [VGG16](#1-vgg16)
+    - [VGG19](#2-vgg19)
+    - [ResNet50](#3-resnet50)
+  - [Representations and Loss Functions](#representations-and-loss-functions)
+- [Information Regarding Dataset](#dataset-information)
 - [Results](#results)
 - [Discussion Over Results](#discussion-over-results)
   - [A.) Effect of model architecture](#a-effect-of-model-architecture)
@@ -34,26 +37,32 @@ The principle of neural style transfer is to define two distance functions, one 
 
 ### Models
 
-#### VGG16
+In this work, we have used 3 well-known CNN architectures and compared their resulting images.
+
+#### 1.) VGG16
 
 ![VGG16](https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/vgg16.png)
 
-#### VGG19
+#### 2.) VGG19
 
 ![Vgg19](https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/vgg19.jpg)
 
-#### ResNet50
+#### 3.) ResNet50
 
 ![ResNet50](https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/resnet50.png)
 
-### Representations
+### Representations and Loss Functions
 
 In order to get both the content and style representations, we looked at some intermediate layers within our model. Intermediate layers represent feature maps that become increasingly higher ordered as we go deeper. We are used the network architecture of VGG16 and VGG19 pretrained image classification network. These intermediate layers are necessary to define the representation of content and style of our images. For an input image, we tried to match the corresponding style and content target representations at these intermediate layers.
 
-### Loss Functions
+As the output image is framed from 2 images, there are basically, 2 loss functions: 
+* *Content Loss function (Lcontent)* - It ensures that the activations of the high layers are similar between the content image and the generated image.
+ 
+* *Style Loss function (Lstyle)*  It ensures that the correlation of activations in all the layers are similar between the style image and the generated image.
 
-We have defined 2 loss functions: **content** loss function and **style** loss function. The content loss function ensures that the activations of the high layers are similar between the content image and the generated image. The style loss function makes sure that the
-correlation of activations in all the layers are similar between the style image and the generated image.
+<img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/image1.png" width=500 height=500>
+
+<img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/image2.png" width=500 height=500>
 
 ### Process Flow
 
@@ -61,9 +70,15 @@ correlation of activations in all the layers are similar between the style image
 
 * * *
 
+## Dataset Information
+
+You may take any images as content image and style image as per out wish. We took 4 content and 5 style images which are attached in the [`content`](https://github.com/caped-crusader16/CSP520-Computer-Vision/tree/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/Content%20Images) and [`style`](https://github.com/caped-crusader16/CSP520-Computer-Vision/tree/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/Style%20Images) folders in image section.
+
+* * *
+
 ## Results
 
-We took 4 content and 5 style images and tried them over VGG16, VGG19 and ResNet50 models.
+We tried each an every possible combination of Content and Style images over VGG16, VGG19 and ResNet50 models. The following table constains few of those images to show clear comparison.
 
 <table>
   <tr>
@@ -74,48 +89,50 @@ We took 4 content and 5 style images and tried them over VGG16, VGG19 and ResNet
   </tr>
   <tr>
     <td align="center" width=175> Content = New York, Style = Starry Night </td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/1_NewYork_StarryNight_VGG16.jpg" width=250 height=250></td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/2_NewYork_StarryNight_VGG19.jpg" width=250 height=250></td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/3_NewYork_StarryNight_ResNet50.jpg" width=250 height=250></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/Resulting Outputs/1_NewYork_StarryNight_VGG16.jpg" width=250 height=250></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/Resulting Outputs/2_NewYork_StarryNight_VGG19.jpg" width=250 height=250></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/Resulting Outputs/3_NewYork_StarryNight_ResNet50.jpg" width=250 height=250></td>
   </tr>
  
   <tr>
     <td align="center" width=175 > Content = New York, Style = Scream </td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/4_NewYork_Scream_VGG16.jpg" width=250 height=250></td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/5_NewYork_Scream_VGG19.jpg" width=250 height=250></td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/6_NewYork_Scream_ResNet50.jpg" width=250 height=250></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/Resulting Outputs/4_NewYork_Scream_VGG16.jpg" width=250 height=250></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/Resulting Outputs/5_NewYork_Scream_VGG19.jpg" width=250 height=250></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/Resulting Outputs/6_NewYork_Scream_ResNet50.jpg" width=250 height=250></td>
   </tr>
   
   
   <tr>
     <td align="center"  width=175> Content = New York (Low Resolution 128), Style = Scream </td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/14_NewYork128LowRes_Scream_VGG16.jpg" width=250 height=250></td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/15_NewYork128LowRes_Scream_VGG19.jpg" width=250 height=250></td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/16_NewYork128LowRes_Scream_ResNet50.jpg" width=250 height=250></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/Resulting Outputs/14_NewYork128LowRes_Scream_VGG16.jpg" width=250 height=250></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/Resulting Outputs/15_NewYork128LowRes_Scream_VGG19.jpg" width=250 height=250></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/Resulting Outputs/16_NewYork128LowRes_Scream_ResNet50.jpg" width=250 height=250></td>
   </tr>
   
   <tr>
-    <td align="center"  width=175> Content = New York, Style = HoneyComb </td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/7_NewYork_Honeycomb_VGG16.jpg" width=250 height=250></td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/8_NewYork_Honeycomb_VGG19.jpg" width=250 height=250></td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/9_NewYork_Honeycomb_ResNet50.jpg" width=250 height=250></td>
-  </tr>
-  
-  <tr>
-    <td align="center"  width=175> Content = New York, Style = Starry Night </td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/10_GrandCanyon_StarryNight_VGG16.jpg" width=250 height=250></td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/11_GrandCanyon_StarryNight_VGG19.jpg" width=250 height=250></td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/12_GrandCanyon_StarryNight_ResNet50.jpg" width=250 height=250 alt="GrandCanyon x StarryNight : ResNet50"></td>
+    <td align="center"  width=175> Content = Grand Canyon, Style = Starry Night </td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/Resulting Outputs/10_GrandCanyon_StarryNight_VGG16.jpg" width=250 height=250></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/Resulting Outputs/11_GrandCanyon_StarryNight_VGG19.jpg" width=250 height=250></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/Resulting Outputs/GrandCanyon-X-StarryNights-ResNet50.png" width=250 height=250 alt="GrandCanyon x StarryNight : ResNet50"></td>
   </tr>
   
   
   <tr>
-    <td align="center"  width=175> Content = New York, Style = Scream </td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/12_GrandCanyon_Scream_VGG16.jpg" width=250 height=250></td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/13_GrandCanyon_Scream_VGG19.jpg" width=250 height=250></td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/14_GrandCanyon_Scream_ResNet50.jpg" width=250 height=250 alt="GrandCanyon x Scream : ResNet50"></td>
+    <td align="center"  width=175> Content = Grand Canyon, Style = Scream </td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/Resulting Outputs/12_GrandCanyon_Scream_VGG16.jpg" width=250 height=250></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/Resulting Outputs/13_GrandCanyon_Scream_VGG19.jpg" width=250 height=250></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/Resulting Outputs/GrandCanyon-X-Scream-ResNet50.png" width=250 height=250 alt="GrandCanyon x Scream : ResNet50"></td>
+  </tr>
+  
+  <tr>
+    <td align="center"  width=175> Content = Despicable Me, Style = Honey Comb </td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/Resulting%20Outputs/DespicableMe-X-HoneyComb-VGG16.png" width=250 height=250></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/Resulting%20Outputs/DespicableMe-X-HoneyComb-VGG19.png" width=250 height=250></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/Resulting%20Outputs/DespicableMe-X-HoneyComb-ResNet50.png" width=250 height=250 alt="Despicable Me x Honey Comb : ResNet50"></td>
   </tr>
  </table>
+
+Many More images have been generated. Please check those in the [ipynb notebook](https://colab.research.google.com/drive/1tBeE7PvA_8isnkHtPkSe4fL4BbWu1Nf2?usp=sharing).
 
 * * *
 
@@ -243,4 +260,5 @@ $ pip install -r requirements.txt
 ## Contribution
 
 - Team : The Salvator Brothers
-- Members : [Kirtan Kalaria](https://github.com/kkalaria16), [Manav Vagrecha](https://github.com/caped-crusader16) 
+- Members : [Kirtan Kalaria](https://github.com/kkalaria16), [Manav Vagrecha](https://github.com/caped-crusader16)
+      
