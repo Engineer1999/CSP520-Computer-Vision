@@ -6,14 +6,21 @@ This work presents a neural algorithm of artistic style, known as Style Transfer
 
 - [Introduction](#introduction)
 - [Approach](#approach)
-  - [Model Description](#model)
+  - [Model Description](#models)
   - [Representations](#representations)
   - [Loss Functions](#loss-functions)
 - [Results](#results)
+- [Discussion Over Results](#discussion-over-results)
+  - [A.) Effect of model architecture](#a-effect-of-model-architecture)
+  - [B.) Effect of content and style loss weights](#b-effect-of-content-and-style-loss-weights)
+  - [C.) Effect of content and style image type](#c-effect-of-content-and-style-image-type)
+  - [D.) Effect of content image resolution](#d-effect-of-content-image-resolution)
+- [Key-Takeaways](#key-takeaways)
 - [Installation Guide](#installation-guide)
 - [References](#references)
 - [Contribution](#contribution)
 
+* * *
 
 ## Introduction
 
@@ -21,23 +28,27 @@ Neural style transfer is an optimization technique used to take three images, a 
 
 The principle of neural style transfer is to define two distance functions, one that describes how different the content of two images are, Lcontent, and one that describes the difference between the two images in terms of their style, Lstyle. Then, given three images, a desired style image, a desired content image, and the input image (initialized with the content image), we try to transform the input image to minimize the content distance with the content image and its style distance with the style image.
 
+* * *
+
 ## Approach
 
-
-
-### Representations
-
-In order to get both the content and style representations, we looked at some intermediate layers within our model. Intermediate layers represent feature maps that become increasingly higher ordered as we go deeper. We are used 
-the network architecture of VGG16 and VGG19 pretrained image classification network. These intermediate layers are necessary to define the representation of content and style of our images. For an input image, we tried to match the corresponding style and content target representations at these intermediate layers.
-
-### Model
+### Models
 
 #### VGG16
 
+![VGG16](https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/vgg16.png)
+
 #### VGG19
+
+![Vgg19](https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/vgg19.jpg)
 
 #### ResNet50
 
+![ResNet50](https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/resnet50.png)
+
+### Representations
+
+In order to get both the content and style representations, we looked at some intermediate layers within our model. Intermediate layers represent feature maps that become increasingly higher ordered as we go deeper. We are used the network architecture of VGG16 and VGG19 pretrained image classification network. These intermediate layers are necessary to define the representation of content and style of our images. For an input image, we tried to match the corresponding style and content target representations at these intermediate layers.
 
 ### Loss Functions
 
@@ -47,6 +58,8 @@ correlation of activations in all the layers are similar between the style image
 ### Process Flow
 
 ![Process Flow](https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/Process_Flow.png)
+
+* * *
 
 ## Results
 
@@ -104,6 +117,100 @@ We took 4 content and 5 style images and tried them over VGG16, VGG19 and ResNet
   </tr>
  </table>
 
+* * *
+
+## Discussion Over Results
+
+Neural style transfer is more art than science. The quality of result in style transfer, is largely a subjective matter. The expectations can vary from person to person, so does the likeability of the result. Much also depends on the difference between the expectation and the result and the flexibility of the viewer. So, we will discuss the following according to our point of view.
+
+### A) Effect of model architecture
+
+VGG16 and VGG19 have much better performance than ResNet50. VGG models succeed in capturing the style much better than ResNet50, even though they were trained on the same ImageNet dataset. Although VGG16 and VGG19 perform similarly, they have some noticeable differences. 
+
+VGG19 produces relatively smoother images but slightly deforms the structure of objects. On the other hand, VGG16 captures exact style elements (type of higher complexity features) from the style image better, for example in Fig. 22, we can see the yellow spots in the blue strokes exactly like in the original style image, while VGG19 captures lower level
+features like the strokes of alternating shades of blue better. This also contributes to the smoothness of the result image as lesser complex features are blended better in VGG19, but at the slight cost of exact stylistic elements. We can’t declare one better than the other; the more suitable model depends on the what type of stylistic elements (i.e. features of the style image) we want to capture, rendering it a subjective choice. 
+
+Meanwhile, ResNet50, irrespective of the choice of style and content layers (which is an extremely cumbersome process), captures content much better but fails to capture complex style features satisfactorily. However, in its own way, the resulting image is not unpleasant and looks more like an oil painting. On the other hand, VGG images look like crayon or
+water color paintings. 
+
+It would be interesting to see the effect of using representation layers from VGG16 or VGG19 as well as ResNet50. From literature review, we even found some people who have tried these models pre-trained on datasets other than ImageNet. They observed that the results we get are not due to the
+dataset used but due to the architecture of the models. In other datasets, they found the same differences in performance and results. It appears that because ResNet50 is very complex, the style features are distributed in a very large number of layers, reducing the variation covered in each block. Think of
+it as ’feature density’. Hence, ResNet50, and by extension, all ResNet models fail to capture complex styles without significant loss in content. The difference in performance of the two VGG models can also be explained by the same logic. However, very low architecture complexity may result in the style and content not being captured well. Hence there is a sweet spot for model complexity and VGG16 and VGG19 lie close to it.
+
+Also, as the model complexity increases, we have to include
+more layers starting from the beginning to cover larger scale
+style features, which results in other set of issues.
+
+### B) Effect of content and style loss weights
+
+We isolate style and content in the style transfer algorithm
+but it is not possible to do it perfectly. At best, we create two
+sets of representations - one with more content representation
+than style representation and the other the other way around.
+We rely on the difference in each representation to effective
+represent the style and the content.
+Hence, we cannot perfectly combine the style from the style
+image and content from the content image. However, we can
+make different choices of the representational layers to suit our
+need. And after that we calculate the style loss and content
+loss.
+But in order to optimise the result, we need just one loss that
+includes the style and content losses. We can tune the process
+to balance the emphasis style and content by controlling the
+weights of style and content losses in the total loss
+
+Higher content loss weight will help preserve the visual
+structure of the content image but will compromise the style
+and vice versa for higher content loss weight. There is a clear
+trade-off. The key is to find the right balance by adjusting the
+ratio of the two.
+
+### C) Effect of content and style image type
+
+Natural images tend to be smoother than urban or artificial
+images, including animated images. Moreover, the former has
+a lesser geometric perfection than the latter, like sharp edges
+and corners. Thus the loss of content is more prominent in the
+latter.
+Moreover, certain pairings of style and content images tend
+to perform better. There is no concrete logic to explain this. It
+just is, just like wine and cheese pairings. It is also observed
+that natural content images perform better with natural style
+images like artwork.
+
+### D) Effect of content image resolution
+
+It appears that low resolution content images result in
+smoother result images. It has lesser noise like fewer mono-
+color blobs and patches.However, content structures, especially
+finer structures are also compromised marginally in case of
+low resolution images.
+The better choice depends on the type of style features we
+are looking for in the style image. If we want more localized
+features, high resolution content images are better.
+We believe the same could be achieved with regularisation
+layers in the models, especially blurring or smoothing layers.
+
+* * *
+
+## Key Takeaways
+
+In this work, we have implemented neural algorithm for
+Neural Style Transfer using few pre-trained classical CNN
+architectures such as VGG16, VGG19 and ResNet50 and
+their results have been discussed and compared. Conclusively,
+this process is not suited for batch processing. Rather, it
+is to be implemented as a customized process by choosing
+representation layers and hyperparameters for content and
+style image pairs to get the desired result. We can leverage
+the inferences and learnings from the discussion of results
+and use it to improve the process in many ways. Since it is
+a relatively newer topic, very less work has been done in this
+area but there is a large scope of improvement, which again,
+lies in the interdisciplinary intersection of art and computer
+vision, requiring sufficient proficiency in both fields.
+
+* * *
 
 ## Platform 
 
@@ -122,6 +229,7 @@ $ pip install -r requirements.txt
 ```
 - To run locally, launch jupyter notebook using `$ jupyter notebook` or upload the `.ipynb` file on Google Colab.
 
+* * *
 
 ## References
 -  L. A. Gatys, A. S. Ecker, and M. Bethge, “A Neural Algorithm of Artistic Style,” arXiv.org, 02-Sep-2015. [Online]. Available: [Link](https://arxiv.org/abs/508.06576). 
@@ -130,7 +238,7 @@ $ pip install -r requirements.txt
 - N. Kasten, “Art & AI: The Logic Behind Deep Learning ’Style Transfer’,” Medium, 12-Mar-2020. [Online]. Available: [Link](https://medium.com/codait/art-ai-the-logic-behind-deep-learning-style-transfer-1f59f51441d1).
 - Leon A. Gatys, ”Image Style Transfer Using Convolutional Neural Networks”, . [Online]. Available: [Link](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf).
 
-
+* * *
 
 ## Contribution
 
