@@ -202,7 +202,6 @@ $ pip install -r requirements.txt
 ## References
 -  V. Fung, “An overview of resnet and its variants,” 17-Jul-2017. [Online]. Available: [Link](https://towardsdatascience.com/an-overview-of-resnet-and-its-variants-5281e2f56035).
 - Vgg16 - convolutional network for classification and detection,” 24-Feb-2021. [Online]. Available: [Link](https://medium.com/tensorflow/neural-style-transfer-creating-art-with-deep-learning-using-tf-keras-and-eager-execution-7d541ac31398)
-- N. Kasten, “Art & AI: The Logic Behind Deep Learning ’Style Transfer’,” Medium, 12-Mar-2020. [Online]. Available: [Link](https://neurohive.io/en/popular-networks/vgg16/).
 - Keras Conv2D: Working with CNN 2D Convolutions in Keras”. [Online]. Available: [Link](https://missinglink.ai/guides/keras/keras-conv2d-working-cnn-2d-convolutions-keras/).
 
 * * *
