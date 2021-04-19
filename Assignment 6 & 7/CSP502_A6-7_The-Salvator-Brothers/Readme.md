@@ -46,7 +46,7 @@ correlation of activations in all the layers are similar between the style image
 
 ### Process Flow
 
-![alt_text](https://github.com/jimil749/CSP520-Computer-Vision/blob/jimil/assignment-6/Assignment%206%20%26%207/Samaritans_6/images/nst_architecture.jpg)
+![Process Flow](https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/Process_Flow.png)
 
 ## Results
 
@@ -61,46 +61,46 @@ We took 4 content and 5 style images and tried them over VGG16, VGG19 and ResNet
   </tr>
   <tr>
     <td align="center" width=175> Content = New York, Style = Starry Night </td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/main/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/1_NewYork_StarryNight_VGG16.jpg" width=250 height=250></td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/main/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/2_NewYork_StarryNight_VGG19.jpg" width=250 height=250></td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/main/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/3_NewYork_StarryNight_ResNet50.jpg" width=250 height=250></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/1_NewYork_StarryNight_VGG16.jpg" width=250 height=250></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/2_NewYork_StarryNight_VGG19.jpg" width=250 height=250></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/3_NewYork_StarryNight_ResNet50.jpg" width=250 height=250></td>
   </tr>
  
   <tr>
     <td align="center" width=175 > Content = New York, Style = Scream </td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/main/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/4_NewYork_Scream_VGG16.jpg" width=250 height=250></td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/main/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/5_NewYork_Scream_VGG19.jpg" width=250 height=250></td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/main/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/6_NewYork_Scream_ResNet50.jpg" width=250 height=250></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/4_NewYork_Scream_VGG16.jpg" width=250 height=250></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/5_NewYork_Scream_VGG19.jpg" width=250 height=250></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/6_NewYork_Scream_ResNet50.jpg" width=250 height=250></td>
   </tr>
   
   
   <tr>
     <td align="center"  width=175> Content = New York (Low Resolution 128), Style = Scream </td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/main/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/14_NewYork128LowRes_Scream_VGG16.jpg" width=250 height=250></td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/main/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/15_NewYork128LowRes_Scream_VGG19.jpg" width=250 height=250></td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/main/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/16_NewYork128LowRes_Scream_ResNet50.jpg" width=250 height=250></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/14_NewYork128LowRes_Scream_VGG16.jpg" width=250 height=250></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/15_NewYork128LowRes_Scream_VGG19.jpg" width=250 height=250></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/16_NewYork128LowRes_Scream_ResNet50.jpg" width=250 height=250></td>
   </tr>
   
   <tr>
     <td align="center"  width=175> Content = New York, Style = HoneyComb </td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/main/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/7_NewYork_Honeycomb_VGG16.jpg" width=250 height=250></td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/main/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/8_NewYork_Honeycomb_VGG19.jpg" width=250 height=250></td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/main/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/9_NewYork_Honeycomb_ResNet50.jpg" width=250 height=250></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/7_NewYork_Honeycomb_VGG16.jpg" width=250 height=250></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/8_NewYork_Honeycomb_VGG19.jpg" width=250 height=250></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/9_NewYork_Honeycomb_ResNet50.jpg" width=250 height=250></td>
   </tr>
   
   <tr>
     <td align="center"  width=175> Content = New York, Style = Starry Night </td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/main/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/10_GrandCanyon_StarryNight_VGG16.jpg" width=250 height=250></td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/main/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/11_GrandCanyon_StarryNight_VGG19.jpg" width=250 height=250></td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/main/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/12_GrandCanyon_StarryNight_ResNet50.jpg" width=250 height=250 alt="GrandCanyon x StarryNight : ResNet50"></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/10_GrandCanyon_StarryNight_VGG16.jpg" width=250 height=250></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/11_GrandCanyon_StarryNight_VGG19.jpg" width=250 height=250></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/12_GrandCanyon_StarryNight_ResNet50.jpg" width=250 height=250 alt="GrandCanyon x StarryNight : ResNet50"></td>
   </tr>
   
   
   <tr>
     <td align="center"  width=175> Content = New York, Style = Scream </td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/main/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/12_GrandCanyon_Scream_VGG16.jpg" width=250 height=250></td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/main/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/13_GrandCanyon_Scream_VGG19.jpg" width=250 height=250></td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/main/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/14_GrandCanyon_Scream_ResNet50.jpg" width=250 height=250 alt="GrandCanyon x Scream : ResNet50"></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/12_GrandCanyon_Scream_VGG16.jpg" width=250 height=250></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/13_GrandCanyon_Scream_VGG19.jpg" width=250 height=250></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A6%267/Assignment%206%20%26%207/CSP502_A6-7_The-Salvator-Brothers/images/14_GrandCanyon_Scream_ResNet50.jpg" width=250 height=250 alt="GrandCanyon x Scream : ResNet50"></td>
   </tr>
  </table>
 
