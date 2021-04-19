@@ -6,17 +6,18 @@ In this assignment, our objective is Classification of Citrus Leaves Data using 
 
 - [Introduction](#introduction)
 - [Approach](#approach)
- - [Dataset and preparation](#dataset-and-preparation)
- - [Model](#model)
- - [Training](#training)
-  - [Optimizers](#optimizers)
-  - [Hyperparameters](#hyperparameters)
+  - [Dataset and preparation](#dataset-and-preparation)
+  - [Model](#model)
+    - [A.) Architecture](#a-architecture)
+    - [B.) Training](#b-training)
+      - [I. Optimizers](#i-optimizers)
+        - [1.} Stochastic Gradient Descent (SGD), with momentum](#1-stochastic-gradient-descent-with-momentum)
+        - [2.} Root Mean Square Propogation (RMSprop)](#2-root-mean-square-propogation)
+        - [3.} Adaptive Moment Estimation (ADAM)](#3-adaptive-moment-estimation)
+      - [II. Hyperparameters](#ii-hyperparameters)
 - [Results](#results)
-- [Discussion Over Results](#discussion-over-results)
-  - [A.) Effect of model architecture](#a-effect-of-model-architecture)
-  - [B.) Effect of content and style loss weights](#b-effect-of-content-and-style-loss-weights)
-  - [C.) Effect of content and style image type](#c-effect-of-content-and-style-image-type)
-  - [D.) Effect of content image resolution](#d-effect-of-content-image-resolution)
+  - [Performance Metrics](#performance-metrics)
+- [Discussion Over Results](#discussion-of-results)
 - [Key-Takeaways](#key-takeaways)
 - [Installation Guide](#installation-guide)
 - [References](#references)
@@ -44,7 +45,7 @@ ImageDataGenerator was used to generate training, validation and testing data [6
 
 We made our custom model for this task.
 
-#### Architecture
+#### A.) Architecture
 
 Layers:
 - Convolution (16 filters, 3×3 kernel, ReLU)
@@ -67,21 +68,21 @@ Layers:
 
 The inspiration for our architecture is drawn from Alexnet. We have a simple dataset so it was important to control the number of  parameters in order to control variance. This particular model has been reached after more than a hundred tries and iterative steps in order to improve it. All tries at adding regularization, changing activation functions, ordering of layers, number of layers and more, have resulted in very unfavorable accuracies. This is a sweet spot we had reached.
 
-### Training
+### B.) Training
 
-#### Optimizers
+#### I. Optimizers
 We  have  tried  Stochastic  Gradient  Descent  (SGD)  withmomentum,  Adam  and  RMSprop.  SGD  performed  theworst and RMSprop performed the best.
 
-##### Stochastic Gradient Descent, with momentum
+#### 1.} Stochastic Gradient Descent, with momentum
 ![SGD](https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A4%265/Assignment%204%20%26%205/CSP502_A4-5_The-Salvator-Brothers/images/SGD.jpg)
 
-##### Root Mean Square Propogation
+#### 2.} Root Mean Square Propogation
 ![RMSPROP](https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A4%265/Assignment%204%20%26%205/CSP502_A4-5_The-Salvator-Brothers/images/RMSPROP.jpg)
 
-##### Adaptive Moment Estimation
+#### 3.} Adaptive Moment Estimation
 ![ADAM](https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A4%265/Assignment%204%20%26%205/CSP502_A4-5_The-Salvator-Brothers/images/ADAM.jpg)
 
-#### Hyperparameters
+#### II. Hyperparameters
 
 - Number of Epochs
 - Batch Size
@@ -137,28 +138,28 @@ We have kept the number of epochs as 35 as to neither underfit nor overfit the m
   </tr>
  
   <tr>
-    <td align="center" width=175> Loss Curves </td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A4%265/Assignment%204%20%26%205/CSP502_A4-5_The-Salvator-Brothers/images/loss_sgd.png" width=250 height=250></td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A4%265/Assignment%204%20%26%205/CSP502_A4-5_The-Salvator-Brothers/images/loss_rms.png" width=250 height=250></td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A4%265/Assignment%204%20%26%205/CSP502_A4-5_The-Salvator-Brothers/images/loss_adam.png" width=250 height=250></td>
+    <td align="center" width=100> Loss Curves </td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A4%265/Assignment%204%20%26%205/CSP502_A4-5_The-Salvator-Brothers/images/loss_sgd.png" width=275 height=275></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A4%265/Assignment%204%20%26%205/CSP502_A4-5_The-Salvator-Brothers/images/loss_rms.png" width=275 height=275></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A4%265/Assignment%204%20%26%205/CSP502_A4-5_The-Salvator-Brothers/images/loss_adam.png" width=275 height=275></td>
   </tr>
   <tr>
-    <td align="center" width=175> Accuracy Curves </td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A4%265/Assignment%204%20%26%205/CSP502_A4-5_The-Salvator-Brothers/images/accuracy_sgd.png" width=250 height=250></td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A4%265/Assignment%204%20%26%205/CSP502_A4-5_The-Salvator-Brothers/images/accuracy_rms.png" width=250 height=250></td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A4%265/Assignment%204%20%26%205/CSP502_A4-5_The-Salvator-Brothers/images/accuracy_adam.png" width=250 height=250></td>
+    <td align="center" width=100> Accuracy Curves </td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A4%265/Assignment%204%20%26%205/CSP502_A4-5_The-Salvator-Brothers/images/accuracy_sgd.png" width=275 height=275></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A4%265/Assignment%204%20%26%205/CSP502_A4-5_The-Salvator-Brothers/images/accuracy_rms.png" width=275 height=275></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A4%265/Assignment%204%20%26%205/CSP502_A4-5_The-Salvator-Brothers/images/accuracy_adam.png" width=275 height=275></td>
   </tr>
   <tr>
-    <td align="center" width=175> Precision Curves </td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A4%265/Assignment%204%20%26%205/CSP502_A4-5_The-Salvator-Brothers/images/precision_sgd.png" width=250 height=250></td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A4%265/Assignment%204%20%26%205/CSP502_A4-5_The-Salvator-Brothers/images/precision_rms.png" width=250 height=250></td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A4%265/Assignment%204%20%26%205/CSP502_A4-5_The-Salvator-Brothers/images/precision_adam.png" width=250 height=250></td>
+    <td align="center" width=100> Precision Curves </td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A4%265/Assignment%204%20%26%205/CSP502_A4-5_The-Salvator-Brothers/images/precision_sgd.png" width=275 height=275></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A4%265/Assignment%204%20%26%205/CSP502_A4-5_The-Salvator-Brothers/images/precision_rms.png" width=275 height=275></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A4%265/Assignment%204%20%26%205/CSP502_A4-5_The-Salvator-Brothers/images/precision_adam.png" width=275 height=275></td>
   </tr>
   <tr>
-    <td align="center"  width=175> Recall Curves </td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A4%265/Assignment%204%20%26%205/CSP502_A4-5_The-Salvator-Brothers/images/recall_sgd.png" width=250 height=250></td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A4%265/Assignment%204%20%26%205/CSP502_A4-5_The-Salvator-Brothers/images/recall_rms.png" width=250 height=250></td>
-    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A4%265/Assignment%204%20%26%205/CSP502_A4-5_The-Salvator-Brothers/images/recall_adam.png" width=250 height=250></td>
+    <td align="center"  width=100> Recall Curves </td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A4%265/Assignment%204%20%26%205/CSP502_A4-5_The-Salvator-Brothers/images/recall_sgd.png" width=275 height=275></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A4%265/Assignment%204%20%26%205/CSP502_A4-5_The-Salvator-Brothers/images/recall_rms.png" width=275 height=275></td>
+    <td><img src="https://github.com/caped-crusader16/CSP520-Computer-Vision/blob/The_Salvator_Brothers-A4%265/Assignment%204%20%26%205/CSP502_A4-5_The-Salvator-Brothers/images/recall_adam.png" width=275 height=275></td>
   </tr>
 </table>
 
