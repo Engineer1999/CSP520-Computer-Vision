@@ -1,0 +1,7 @@
+opencv-python==3.4.2.17
+opencv-contrib-python==3.4.2.17
+cv2==3.4.2
+numpy==1.19.5
+matplotlib==3.2.2
+sklearn==0.22.2.post1
+python_version==3.7.10
